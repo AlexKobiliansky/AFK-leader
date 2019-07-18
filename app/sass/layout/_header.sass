@@ -1,0 +1,158 @@
+.top-line
+  border-bottom: 1px solid #f4f4f4
+  &-wrap
+    display: flex
+    justify-content: space-between
+    padding: 24px 0 22px
+    align-items: center
+
+.top-desc
+  text-align: center
+  position: relative
+  h2
+    font-size: 20px
+    color: $accent
+    margin-bottom: 0
+  p
+    font-size: 16px
+    font-weight: 300
+    margin-bottom: 0
+  &:before
+    content: ''
+    position: absolute
+    width: 80px
+    height: 70px
+    background-image: url('../img/bg-topdesc.svg')
+    left: calc(50% - 40px)
+    top: calc(50% - 35px)
+    opacity: .1
+    +bg-cover
+
+.top-contacts
+  text-align: right
+  a
+    +mt(.3s)
+    color: $text
+    line-height: 1
+    &:hover
+      color: $accent
+  .phone
+    font-size: 20px
+    font-weight: 700
+    margin-bottom: 5px
+    display: block
+  .email
+    font-size: 16px
+    font-weight: 300
+    text-decoration: underline
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      width: 18px
+      height: 13px
+      background-image: url('../img/icons/mail-icon.svg')
+      +bg-cover
+      left: -27px
+      top: 0
+
+.mnu-line
+  border-bottom: 1px solid #f4f4f4
+  .btn
+    font-size: 14px
+    .svg
+      margin-left: 10px
+      position: relative
+      top: 2px
+  .btn-wrap
+    text-align: right
+  &-row
+    align-items: center
+    padding-top: 17px
+    padding-bottom: 17px
+
+.main-mnu
+  ul
+    display: flex
+    justify-content: space-between
+    align-items: center
+  li
+    flex-grow: 1
+  a
+    +mt(.3s)
+    display: block
+    font-size: 16px
+    color: $text
+    font-weight: 700
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      height: 2px
+      width: 0
+      background-color: $accent
+      left: 0
+      top: -5px
+      +mt(.3s)
+    &:hover
+      color: $accent
+      &:before
+        width: 34px
+
+.hamburger
+  display: none
+  padding: 0
+  position: relative
+  top: 3px
+
+
+//mmenu customization start
+
+.mm-menu_navbar_top-3 .mm-panels
+  top: 140px
+
+.mm-menu_theme-dark
+  background-color: #f7f7f7
+  text-transform: uppercase
+
+.mm-logo
+  display: block
+  margin: 0 auto
+  transform: scaleY(.51)
+
+.mm-navbars_top
+  border-color: transparent
+
+.mm-listitem, .mm-listitem .mm-btn_next, .mm-listitem .mm-btn_next:before, .mm-listitem:after, .mm-listview
+  border: none
+
+
+.mm-listitem
+  a
+    padding-top: 8px
+    padding-bottom: 8px
+    padding-left: 50px
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      width: 8px
+      height: 16px
+      background-image: url('../img/icons/arr-btn-accent.svg')
+      +bg-cover
+      left: 26px
+      top: 10px
+      z-index: 100
+
+.mm-navbar
+  border: none
+
+
+.mm-menu_theme-dark .mm-navbar a, .mm-menu_theme-dark .mm-navbar>*
+  font-size: 20px
+  color: #fff
+  letter-spacing: 2px
+
+.mm-menu_theme-dark .mm-listview a:not(.mm-btn_next)
+  color: $text
+//mmenu customization end

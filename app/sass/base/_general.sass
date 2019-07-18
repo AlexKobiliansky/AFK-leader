@@ -63,4 +63,29 @@ ul
   display: none!important
 // ======= END TEMPLATE STYLES =======
 
+.btn
+  display: inline-block
+  font-size: 16px
+  font-weight: bold
+  line-height: 1
+  border-width: 1px
+  border-style: solid
+  padding: 12px 30px
+  +mt(.3s)
+  .svg
+    +mt(.3s)
+
+.btn-mixed
+  border-color: $accent
+  color: $accent
+  border-radius: 4px
+  .svg
+    fill: $accent
+  &:hover
+    background-color: $accent
+    color: #fff
+    .svg
+      fill: #fff
+
+
 
