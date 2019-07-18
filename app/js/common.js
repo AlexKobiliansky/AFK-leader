@@ -43,6 +43,70 @@ $(document).ready(function(){
     // *** END MOBILE MNU *** //
 
 
+    //*** SLIDERS ***//
+    $('.intro-slider').owlCarousel({
+        loop:false,
+        nav: true,
+        items: 1,
+        margin: 0,
+        dots: true,
+        autoHeight: true,
+        navText: ["",""],
+        animateIn: "fadeIn",
+        animateOut: "fadeOut",
+        thumbs: true,
+        thumbsPrerendered: true,
+        responsive: {
+            0: {
+                dots: true,
+                nav: true,
+            },
+            480: {
+                dots: false,
+                nav: false,
+            },
+            768: {
+                dots: true,
+                nav: true,
+            }
+        }
+    });
+
+
+
+
+
+
+
+
+    /*slider counters functionality*/
+    $('.slider-count').each(function () {
+        var $this = $(this);
+        var $slider = $this.find('.slider-item');
+        var $slides = $slider.find('.slide');
+        var $totalSlides = $slides.length;
+        var $info = $this.find('.cur');
+
+        // if ($totalSlides < 2) {
+        //     $this.find('.slider-counters').hide();
+        // }
+
+        $this.find('.total').text('0'+$totalSlides);
+        $info.text('01');
+
+
+
+        $slider.on('changed.owl.carousel', function (e) {
+            var currentItem = e.item.index + 1;
+                $info.text('0'+currentItem);
+        })
+    });
+    /*end slider counters functionality*/
+
+
+    //*** END SLIDERS ***//
+
+
     $('img.svg').each(function(){
         var $img = jQuery(this);
         var imgID = $img.attr('id');

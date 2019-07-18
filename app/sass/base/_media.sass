@@ -5,6 +5,11 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+
+  .intro-item
+    h1
+      font-size: 28px
+
   .mnu-line
     .btn
       padding-left: 20px
@@ -13,6 +18,25 @@
 // ≥992px
 +media-breakpoint-down(md)
 
+  .s-intro
+    padding-top: 45px
+
+  .intro-slider
+    &:before, &:after
+      display: none
+
+  .socials
+    a
+      display: inline-block
+      margin-left: 10px
+
+
+  .intro-item
+    padding: 40px 40px 80px
+    text-align: center
+    .btn-wrap
+      margin-top: 25px
+      margin-bottom: 35px
   .leader-item-wrap
     margin-bottom: 30px
 
@@ -38,16 +62,39 @@
 // ≥480px
 +media-breakpoint-down(xs)
 
+  .intro-slider
+    .owl-nav
+      width: 200px
+      left: calc(50% - 100px)
+    .owl-dots
+      left: calc(50% - 40.5px)
+
+
+  .s-intro
+    padding-bottom: 50px
+
+  .intro-item
+    padding-left: 15px
+    padding-right: 15px
+    padding-bottom: 50px
+    h1
+      font-size: 24px
+    .btn-wrap
+      text-align: center
+
+  .intro-nav
+    display: none
+
   .main-mnu
     display: none
 
   .hamburger
     display: inline-block
-
-  .btn-wrap
-    display: flex
-    justify-content: space-between
-    padding: 0 30px
+  .mnu-line
+    .btn-wrap
+      display: flex
+      justify-content: space-between
+      padding: 0 30px
 
   .top-line-wrap
     .logo, .top-contacts
