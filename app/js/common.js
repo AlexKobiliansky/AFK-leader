@@ -73,12 +73,6 @@ $(document).ready(function(){
     });
 
 
-
-
-
-
-
-
     /*slider counters functionality*/
     $('.slider-count').each(function () {
         var $this = $(this);
@@ -105,6 +99,20 @@ $(document).ready(function(){
 
 
     //*** END SLIDERS ***//
+
+
+    function heightses() {
+
+
+        if ($(window).width()>=768) {
+            $('.ben-item-title').height('auto').equalHeights();
+        }
+    }
+
+    $(window).resize(function() {
+        heightses();
+    });
+    heightses();
 
 
     $('img.svg').each(function(){
