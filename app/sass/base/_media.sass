@@ -6,6 +6,18 @@
 // ≥1200px
 +media-breakpoint-down(lg)
 
+  .s-area
+    .wave-wrap
+      display: none
+    .btn-wrap
+      margin-top: 10px
+      text-align: center
+      .btn
+        display: inline-block
+        width: auto
+        height: auto
+        padding: 16px 60px
+
   .ben-item
     padding-right: 0
 
@@ -20,6 +32,9 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+
+  .area-item
+    height: 250px
 
   .ben-item
     &-title
@@ -89,6 +104,15 @@
       text-align: left
 // ≥480px
 +media-breakpoint-down(xs)
+
+  .s-area
+    .btn-wrap
+      .btn
+        padding-left: 35px
+        padding-right: 35px
+
+  .section-title
+    font-size: 24px
 
   .ben-item
     &-title
