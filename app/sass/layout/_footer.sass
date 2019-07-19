@@ -1,0 +1,76 @@
+.main-foot
+  padding: 75px 0 22px
+  h2
+    font-size: 20px
+  a
+    +mt(.3s)
+    color: #757575
+    &:hover
+      color: $accent
+  h3
+    font-size: 18px
+    font-weight: 700
+    letter-spacing: 0.025em
+    margin-bottom: 16px
+    line-height: 1
+    a
+      color: $text
+  li
+    margin-bottom: 10px
+  ul
+    margin-bottom: 16px
+    &.checklist
+      li
+        padding-left: 15px
+        position: relative
+        &:before
+          content: ''
+          position: absolute
+          width: 7px
+          height: 14px
+          background-image: url('../img/icons/arr-btn-grey.svg')
+          background-repeat: no-repeat
+          background-position: center center
+          background-size: 7px 14px
+          left: 0
+          top: 2px
+          +mt(.3s)
+        &:hover
+          &:before
+            background-image: url('../img/icons/arr-btn-accent.svg')
+
+.objects-map
+  font-size: 18px
+  font-weight: 700
+  margin-top: 59px
+  text-decoration: underline
+  display: inline-block
+  color: $accent!important
+
+.bottom-line
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  padding-top: 23px
+  border-top: 1px solid #ebeae8
+  width: 100%
+  margin-right: 100px
+
+  h2
+    margin-bottom: 0
+    line-height: 1
+  .logo-bottom
+    width: 135px
+
+.foot-contacts
+  p
+    margin-bottom: 10px
+  a
+    font-weight: bold
+
+.foot-map
+  height: 312px
+  border: 1px solid #e2e2e2
+  border-radius: 10px
+  margin-top: 30px
+  position: relative
