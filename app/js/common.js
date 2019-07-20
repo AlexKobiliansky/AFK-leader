@@ -106,6 +106,9 @@ $(document).ready(function(){
 
         if ($(window).width()>=768) {
             $('.ben-item-title').height('auto').equalHeights();
+            $('.vac-item-title').height('auto').matchHeight({ byRow: true});
+            $('.vac-item-list').height('auto').matchHeight({ byRow: true});
+            $('.news-item-title').height('auto').matchHeight({ byRow: true});
         }
     }
 

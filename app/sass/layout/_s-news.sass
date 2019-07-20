@@ -1,0 +1,48 @@
+.s-news
+  .all-wrap
+    text-align: right
+    margin-bottom: 50px
+  .all
+    font-weight: 700
+    text-decoration: underline
+    font-size: 16px
+    &:hover
+      text-decoration: none
+
+
+
+.news-item
+  margin-bottom: 30px
+  &-img
+    position: relative
+    height: 242px
+    +bg-cover
+    border-radius: 5px
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      border-radius: 5px
+      background-color: #495860
+      background-image: url('../img/gradient.png')
+      background-position: center center
+      background-repeat: no-repeat
+      opacity: .5
+      background-size: 110% 110%
+  &-title
+    font-size: 16px
+    font-weight: normal
+    margin-top: 20px
+    display: inline-block
+    color: $text
+    +mt(.3s)
+    &:hover
+      color: $accent
+  &-date
+    margin-top: 15px
+    line-height: 1
+    font-size: 14px
+    opacity: .5
