@@ -1,0 +1,31 @@
+.s-breadcrumbs
+  padding-top: 50px
+  font-size: 16px
+  a
+    display: inline-block
+    +mt(.3s)
+    margin-right: 30px
+    position: relative
+    color: $text
+    font-size:
+    &:hover
+      color: $accent
+      &:after
+        color: initial
+    &:after
+      content: '/'
+      position: absolute
+      top: 0
+      right: -21px
+      color: $text
+    &:first-child
+      font-weight: 700
+    &:last-child
+      color: #bcbcbc
+      pointer-events: none
+      &:after
+        display: none
+    &:nth-last-child(2)
+      &:after
+        color: #bcbcbc
+        pointer-events: none

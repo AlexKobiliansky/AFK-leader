@@ -1,0 +1,30 @@
+.s-sitemap
+  padding: 40px 0 70px
+  font-size: 16px
+  ul
+    +mt(.3s)
+  li
+    a
+      display: inline-block
+      position: relative
+      margin-bottom: 15px
+      padding-left: 22px
+      +mt(.3s)
+      left: 0
+      color: $text
+      &:before
+        content: ''
+        position: absolute
+        width: 10px
+        height: 2px
+        background-color: $accent
+        left: 0
+        top: 10px
+      &:hover
+        left: 5px
+        color: $accent
+    &.has-sublist
+      &>a
+        font-weight: 700
+      ul
+        padding-left: 15px
