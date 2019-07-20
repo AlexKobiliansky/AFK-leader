@@ -1,0 +1,48 @@
+.s-contacts
+  padding-top: 50px
+
+.contact-item
+  margin-bottom: 25px
+  font-size: 16px
+  &-title
+    margin-bottom: 16px
+  .soc-item
+    display: inline-block
+    vertical-align: top
+    line-height: 1
+
+    margin-right: 15px
+    border-radius: 3px
+    background-color: #f7f7f7
+    +mt(.3s)
+    .img-wrap
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 29px
+      height: 29px
+    .svg
+      +mt(.3s)
+      fill: #9b9b9b
+    &:hover
+      background-color: $accent
+      .svg
+        fill: #fff
+  a
+    +mt(.3s)
+    color: $text
+    &:hover
+      color: $accent
+
+.contactsmap-wrapper
+  position: relative
+  height: 490px
+  +bg-cover
+  border: 1px solid #e8e8e8
+  border-radius: 5px
+  overflow: hidden
+  margin-bottom: 30px
+
+#contactsmap
+  height: 100%
+  position: relative
