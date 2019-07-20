@@ -42,9 +42,103 @@ $(document).ready(function(){
     });
     // *** END MOBILE MNU *** //
 
+    $('#objects-mnu').smartmenus();
+
+    $('.filter-select').styler();
+
+
+
+
+
+
+
+
+
+    /*slider counters functionality*/
+    $('.slider-count').each(function () {
+        var $this = $(this);
+        var $slider = $this.find('.slider-item');
+        var $slides = $slider.find('.slide');
+        var $totalSlides = $slides.length;
+        var $info = $this.find('.cur');
+
+        if($totalSlides < 10) {
+            $this.find('.total').text('0'+$totalSlides);
+        } else {
+            $this.find('.total').text($totalSlides);
+        }
+
+        //three-items slider
+        if($slider.hasClass('three-items')) {
+            $slider.on('changed.owl.carousel', function (e) {
+
+                if ($(window).width() < 480) {
+                    var currentItem = e.item.index + 1;
+                } else {
+                    var currentItem = e.item.index + 3;
+                }
+
+                if(currentItem < 10) {
+                    $info.text('0'+currentItem);
+                } else {
+                    $info.text(currentItem);
+                }
+            });
+            $slider.on('initialize.owl.carousel', function (e) {
+                var currentItem = e.item.index + 3;
+                $info.text('0'+currentItem);
+            });
+        } else {
+            $slider.on('changed.owl.carousel', function (e) {
+                var currentItem = e.item.index + 1;
+                $info.text('0'+currentItem);
+            });
+
+            $slider.on('initialize.owl.carousel', function (e) {
+                var currentItem = e.item.index + 3;
+                $info.text('0'+currentItem);
+            });
+        }
+
+
+
+
+    });
+    /*end slider counters functionality*/
+
+
+
+
+
+
+
+
+
 
     //*** SLIDERS ***//
-    $('.intro-slider').owlCarousel({
+    $('.objects-slider').owlCarousel({
+        loop:false,
+        nav: true,
+        items: 3,
+        margin: 30,
+        dots: false,
+        autoHeight: false,
+        navText: ["<img class='svg' src='../img/icons/arr-btn.svg'>","<img class='svg' src='../img/icons/arr-btn.svg'>"],
+        responsive: {
+            0: {
+                items: 1,
+                autoHeight: true,
+            },
+            480: {
+                items: 3,
+            }
+        }
+    });
+
+
+
+
+    $('#intro-slider').owlCarousel({
         loop:false,
         nav: true,
         items: 1,
@@ -60,42 +154,27 @@ $(document).ready(function(){
             0: {
                 dots: true,
                 nav: true,
+                items: 1
             },
             480: {
                 dots: false,
                 nav: false,
+                items: 1
             },
             768: {
                 dots: true,
                 nav: true,
+                items: 1
             }
         }
     });
 
 
-    /*slider counters functionality*/
-    $('.slider-count').each(function () {
-        var $this = $(this);
-        var $slider = $this.find('.slider-item');
-        var $slides = $slider.find('.slide');
-        var $totalSlides = $slides.length;
-        var $info = $this.find('.cur');
-
-        // if ($totalSlides < 2) {
-        //     $this.find('.slider-counters').hide();
-        // }
-
-        $this.find('.total').text('0'+$totalSlides);
-        $info.text('01');
 
 
 
-        $slider.on('changed.owl.carousel', function (e) {
-            var currentItem = e.item.index + 1;
-                $info.text('0'+currentItem);
-        })
-    });
-    /*end slider counters functionality*/
+
+
 
 
     //*** END SLIDERS ***//

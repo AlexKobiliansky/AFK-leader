@@ -1,0 +1,198 @@
+.s-objects
+  padding-top: 50px
+  p
+    font-size: 16px
+    line-height: 1.8
+    margin-bottom: 25px
+
+
+.sm-simple
+  background-color: #fff
+  border: 1px solid #e8e8e8
+  border-radius: 5px
+  box-shadow: none
+  font-size: 16px
+  margin-bottom: 30px
+  li
+    padding-left: 20px
+    padding-right: 20px
+    border-top: none!important
+    +mt(.3s)
+    &:hover
+      background-color: $accent
+      &>a, &>a.higlighted, &>a:active, &>a:focus
+        border-bottom-color: transparent
+        border-left-color: $accent
+        padding: 18px 20px 18px 0!important
+        background-color: transparent!important
+        color: #fff
+        font-weight: 600
+        .sub-arrow
+          background-image: url('../img/icons/arr-btn-white.svg')
+          width: 7px!important
+          height: 12px!important
+
+    a, a.higlighted, a:active, a:focus
+      font-weight: 700
+      line-height: 1.2!important
+
+      +mt(.3s)
+      color: $text
+      padding: 18px 20px 18px 0!important
+      border-bottom: 1px solid  #e8e8e8
+      background-color: transparent!important
+      .sub-arrow
+        right: 0!important
+        left: auto!important
+        width: 7px!important
+        height: 12px!important
+        background-image: url('../img/icons/arr-btn-lightgrey.svg')
+        +bg-cover
+        +mt(.3s)
+      .sub-arrow::before
+        display: none
+    ul
+      border: 1px solid #e8e8e8
+      border-radius: 5px
+      left: 30px!important
+      li
+        &>a, &>a.higlighted, &>a:active, &>a:focus
+          font-weight: normal
+        &:hover
+          &>a, &>a.higlighted, &>a:active, &>a:focus
+            font-weight: normal!important
+    &:last-child
+      a, a.higlighted, a:active, a:focus
+        border-color: transparent
+
+
+.side-filter
+  border: 1px solid #e8e8e8
+  border-radius: 5px
+  padding: 15px 20px
+  .item-title
+    padding-left: 15px
+    margin-bottom: 10px
+  label
+    display: block
+    margin-bottom: 15px
+    span
+      display: block
+      font-weight: 700
+      margin-bottom: 8px
+  select
+    width: 100%
+  .btn
+    display: block
+    text-align: center
+    margin-top: 20px
+
+
+p.filter-desc
+  font-size: 12px
+  letter-spacing: 0.025em
+  opacity: .5
+  margin-bottom: 20px
+  line-height: 1.4
+
+
+.jq-selectbox__select
+  border: 1px solid #dfdfdf
+  font-size: 12px
+  padding: 13px 45px 13px 15px
+  height: auto
+  line-height: 1
+  letter-spacing: 0.025em
+  background: #f7f7f7
+  box-shadow: none
+
+
+.jq-selectbox
+  display: block
+  width: 100%
+  &.focused
+    .jq-selectbox__select
+      border-color: lighten($accent, .2)
+  &.opened
+    .jq-selectbox__trigger-arrow
+      transform: rotate(-90deg)
+
+
+.jq-selectbox__trigger
+  border: none
+
+.jq-selectbox__trigger-arrow
+  border: none
+  width: 7px
+  height: 12px
+  background-image: url('../img/icons/arr-btn-grey.svg')
+  +bg-cover
+  transform: rotate(90deg)
+  right: 22px
+  opacity: .4
+
+.jq-selectbox
+  li.selected, li:hover
+    background-color: $accent
+
+
+.objects-slider
+  .owl-nav
+    margin: 30px auto 0
+    position: relative
+    width: 150px
+    button.owl-prev, button.owl-next
+      width: 24px
+      height: 24px
+      +mt(.3s)
+      border: 1px solid $accent
+      background-color: #fff
+      border-radius: 3px
+      text-align: center
+      position: absolute
+      right: 0
+      .svg
+        width: 5px
+        height: auto
+        fill: $accent
+        +mt(.3s)
+      &:hover
+        background-color: $accent
+        .svg
+          fill: #fff
+    button.owl-prev
+      left: 0
+      transform: rotate(180deg)
+
+
+
+.objects-slide
+  border-radius: 5px
+  overflow: hidden
+  &-img
+    +bg-cover
+    height: 130px
+  &-title
+    font-size: 18px
+    +mt(.3s)
+    text-decoration: underline
+    color: $text
+    display: inline-block
+    margin-top: 14px
+    line-height: 1
+    &:hover
+      color: $accent
+
+
+.objects-slider-count
+  .count-container
+    text-align: center
+    color: $accent
+    margin-bottom: 40px
+    .cur
+      font-weight: 700
+      font-size: 18px
+
+
+
+
