@@ -182,9 +182,91 @@ $(document).ready(function(){
     //Переменная для включения/отключения индикатора загрузки
     var spinner = $('.loader');
     //Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)
+    var check_if_load_objectsmap = false;
     var check_if_load = false;
     //Необходимые переменные для того, чтобы задать координаты на Яндекс.Карте
     //var myMapTemp, myPlacemarkTemp;
+
+
+
+
+
+
+
+
+    function init_objectsmap () {
+        var mapId = $('#objectsmap'),
+            attitude = mapId.data("att"),
+            longtitude = mapId.data("long"),
+            zoom = mapId.data("zoom"),
+            marker = mapId.data("marker"),
+            objMap = new ymaps.Map("objectsmap", {
+                center: [attitude, longtitude],
+                controls: ['zoomControl'],
+                zoom: zoom
+            });
+
+        var i;
+        var placemark;
+        var dataObjects = [];
+
+        $('#objectslist .om-item').each(function(){
+            var  omAtt = $(this).data('att'),
+                omLong = $(this).data('long'),
+                omImg = $(this).data('img'),
+                omTitle = $(this).data('title'),
+                omLink = $(this).data('link'),
+                omData = [omAtt, omLong, omImg, omTitle, omLink];
+
+            dataObjects.push(omData);
+        });
+
+        for (i = 0; i < dataObjects.length; ++i) {
+            placemark = new ymaps.Placemark([[dataObjects[i][0]], dataObjects[i][1]], {
+                balloonContent: '<div class="baloon-item"><div class="baloon-title">'+dataObjects[i][3]+'</div><div class="baloon-img" style="background-image: url('+ dataObjects[i][2] +');"></div><div class="baloon-desc">Мы постоянно расширяем нашу географию. С помощью этой интерактивной карты. Вы можете более подробно ознакомиться с нашими объектами.</div><div class="btn-wrap"><a href='+dataObjects[i][4]+'>Подробнее об объекте</a></div>'
+            }, {
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                iconImageHref: marker,
+                // Размеры метки.
+                iconImageSize: [31, 31],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [0, 0],
+                // Балун будем открывать и закрывать кликом по иконке метки.
+                hideIconOnBalloonOpen: false,
+                // Отключаем кнопку закрытия балуна.
+                balloonCloseButton: true,
+            });
+            objMap.geoObjects.add(placemark);
+        }
+
+        objMap.behaviors.disable('scrollZoom');
+
+        // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
+        var layer = objMap.layers.get(0).get(0);
+
+        // Решение по callback-у для определения полной загрузки карты
+        waitForTilesLoad(layer).then(function() {
+            // Скрываем индикатор загрузки после полной загрузки карты
+            spinner.removeClass('is-active');
+        });
+    }// end init
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     //Функция создания карты сайта и затем вставки ее в блок с идентификатором &#34;map-yandex&#34;
@@ -301,7 +383,7 @@ $(document).ready(function(){
                 check_if_load = true;
 
                 // Показываем индикатор загрузки до тех пор, пока карта не загрузится
-                spinner.addClass('is-active');
+                $(this).find('.loader').addClass('is-active');
 
                 // Загружаем API Яндекс.Карт
                 loadScript("https://api-maps.yandex.ru/2.1/?apikey=e470b388-a1d0-4edf-acdc-34b4bc5bedee&lang=ru_RU&loadByRequire=1", function(){
@@ -312,7 +394,30 @@ $(document).ready(function(){
         });
     };
 
+
+
+    var objectsmap = function() {
+        $('.objectsmap-wrap').on( "mouseenter", function(){
+            if (!check_if_load_objectsmap) { // проверяем первый ли раз загружается Яндекс.Карта, если да, то загружаем
+
+                // Чтобы не было повторной загрузки карты, мы изменяем значение переменной
+                check_if_load_objectsmap = true;
+
+                // Показываем индикатор загрузки до тех пор, пока карта не загрузится
+                // spinner.addClass('is-active');
+                $(this).find('.loader').addClass('is-active');
+
+                // Загружаем API Яндекс.Карт
+                loadScript("https://api-maps.yandex.ru/2.1/?apikey=e470b388-a1d0-4edf-acdc-34b4bc5bedee&lang=ru_RU&loadByRequire=1", function(){
+                    // Как только API Яндекс.Карт загрузились, сразу формируем карту и помещаем в блок с идентификатором &#34;map-yandex&#34;
+                    ymaps.load(init_objectsmap);
+                });
+            }
+        });
+    };
+
     ymap();
+    objectsmap();
 
 
 });
