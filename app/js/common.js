@@ -246,6 +246,11 @@ $(document).ready(function(){
 
         if ($(window).width()>=480) {
             $('.objects-slider-large .objects-slide-title').height('auto').equalHeights();
+            $('.doc-item').height('auto').equalHeights();
+        }
+
+        if ($(window).width()<480) {
+
         }
 
 

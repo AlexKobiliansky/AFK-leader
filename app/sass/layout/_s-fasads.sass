@@ -1,0 +1,61 @@
+.s-fasads
+  font-size: 16px
+  .section-title
+    margin-bottom: 30px
+  .item-title
+    margin-bottom: 5px
+  p
+    margin-bottom: 25px
+  .more
+    font-weight: 700
+    text-decoration: underline
+    &:hover
+      text-decoration: none
+      color: $accent
+
+.fasads-img
+  margin: 0 auto 30px
+
+.documentation
+  padding: 60px 0
+
+.doc-item
+  //display: inline-block
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $text
+  font-size: 16px
+  font-weight: 700
+  +mt(.3s)
+  background-color: #f7f7f7
+  position: relative
+  padding: 35px 45px
+  border-radius: 5px
+  vertical-align: middle
+  line-height: 1.2
+  margin-bottom: 15px  
+  .pdf-icon
+    width: 50px
+    height: auto
+    margin-right: 15px
+    flex-grow: 2
+    float: left
+    vertical-align: middle
+  .load-icon
+    width: 14px
+    height: auto
+    position: absolute
+    top: 10px
+    right: 15px
+  .svg
+    +mt(.3s)
+    fill: $accent
+  &:hover
+    background-color: $accent
+    color: #fff
+    .svg
+      fill: #fff
+  &-desc
+    width: calc(100% - 80px)
+
