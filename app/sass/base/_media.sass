@@ -6,6 +6,16 @@
 // ≥1200px
 +media-breakpoint-down(lg)
 
+  .station-nav
+    &-item
+      margin-bottom: 15px
+      margin-right: 15px
+      width: 78px
+      &:nth-child(8n)
+        margin-right: 15px
+      &:nth-child(5n)
+        margin-right: 0
+
   .product-subitem
     font-size: 16px
     margin-right: 30px
@@ -44,6 +54,16 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+
+  .subway
+    margin-top: 30px
+  .station-nav
+    &-item
+      width: 73px
+      &:nth-child(8n)
+        margin-right: 0
+      &:nth-child(5n)
+        margin-right: 15px
 
   .s-fasads
     .more
@@ -151,6 +171,15 @@
 // ≥768px
 +media-breakpoint-down(sm)
 
+  .station-slider
+    margin-bottom: 15px
+
+  .station-nav
+    &-item
+      width: 116px
+      &:nth-child(4n)
+        margin-right: 0
+
   .about-tabs
     &>ul
       justify-content: center
@@ -190,6 +219,20 @@
       text-align: left
 // ≥480px
 +media-breakpoint-down(xs)
+
+  .s-text
+    font-size: 14px
+    line-height: 1.5
+    p
+      margin-bottom: 15px
+
+  .station-slide
+    height: 250px
+
+  .station-nav
+    &-item
+      width: calc(25% - 11.25px)
+      height: 60px
 
   .product-item
     &-img

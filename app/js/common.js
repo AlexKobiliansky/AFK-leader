@@ -185,6 +185,22 @@ $(document).ready(function(){
 
 
 
+    $('.station-slider').owlCarousel({
+        loop:true,
+        nav: false,
+        items: 1,
+        margin: 0,
+        dots: false,
+        autoHeight: false,
+        mouseDrag: false,
+        touchDrag: false,
+        animateIn: "fadeIn",
+        animateOut: "fadeOut",
+        thumbs: true,
+        thumbsPrerendered: true,
+    });
+
+
 
     $('.intro-slider').owlCarousel({
         loop:false,
