@@ -46,6 +46,7 @@ gulp.task('scripts', function() {
 		'app/libs/matchHeight/jquery.matchHeight-min.js',
 		'app/libs/smartmenus/jquery.smartmenus.min.js',
 		'app/libs/form-styler/jquery.formstyler.min.js',
+		'app/libs/tabs/jquery-ui.min.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

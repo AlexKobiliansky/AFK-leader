@@ -88,7 +88,37 @@ $(document).ready(function(){
                 var currentItem = e.item.index + 3;
                 $info.text('0'+currentItem);
             });
-        } else {
+        } else
+
+            //eight-items-slider
+            if ($slider.hasClass('eight-items')) {
+                $slider.on('changed.owl.carousel', function (e) {
+                    if ($(window).width() < 480) {
+                        var currentItem = e.item.index + 1;
+                    } else if (($(window).width() >= 480) && ($(window).width() < 992)) {
+                        var currentItem = e.item.index + 2;
+                    } else
+
+
+                    {
+                        var currentItem = e.item.index + 4;
+                    }
+
+
+                    if(currentItem < 10) {
+                        $info.text('0'+currentItem);
+                    } else {
+                        $info.text(currentItem);
+                    }
+                });
+
+                $slider.on('initialize.owl.carousel', function (e) {
+                    var currentItem = e.item.index + 4;
+                    $info.text('0'+currentItem);
+                });
+        } else
+
+            {
             $slider.on('changed.owl.carousel', function (e) {
                 var currentItem = e.item.index + 1;
                 $info.text('0'+currentItem);
@@ -99,10 +129,6 @@ $(document).ready(function(){
                 $info.text('0'+currentItem);
             });
         }
-
-
-
-
     });
     /*end slider counters functionality*/
 
@@ -135,10 +161,32 @@ $(document).ready(function(){
         }
     });
 
+    $('.objects-slider-large').owlCarousel({
+        loop:false,
+        nav: true,
+        items: 4,
+        margin: 30,
+        dots: false,
+        autoHeight: false,
+        navText: ["<img class='svg' src='../img/icons/arr-btn.svg'>","<img class='svg' src='../img/icons/arr-btn.svg'>"],
+        responsive: {
+            0: {
+                items: 1,
+                autoHeight: true,
+            },
+            480: {
+                items: 2,
+            },
+            992: {
+                items: 4,
+            }
+        }
+    });
 
 
 
-    $('#intro-slider').owlCarousel({
+
+    $('.intro-slider').owlCarousel({
         loop:false,
         nav: true,
         items: 1,
@@ -179,6 +227,8 @@ $(document).ready(function(){
 
     //*** END SLIDERS ***//
 
+    $('.about-tabs').tabs();
+
 
     function heightses() {
 
@@ -189,6 +239,12 @@ $(document).ready(function(){
             $('.vac-item-list').height('auto').matchHeight({ byRow: true});
             $('.news-item-title').height('auto').matchHeight({ byRow: true});
         }
+
+        if ($(window).width()>=480) {
+            $('.objects-slider-large .objects-slide-title').height('auto').equalHeights();
+        }
+
+
     }
 
     $(window).resize(function() {
