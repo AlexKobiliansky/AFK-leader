@@ -1,8 +1,31 @@
 .s-text
   font-size: 16px
-  line-height: 1.8
   letter-spacing: 0.03em
   p
     margin-bottom: 25px
   .section-title
     margin-bottom: 35px
+  .item-title
+    margin-bottom: 15px
+
+.text-img
+  height: 272px
+  +bg-cover
+  position: relative
+  border-radius: 5px
+  overflow: hidden
+  margin-bottom: 25px
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    border-radius: 5px
+    background-color: #495860
+    background-image: url('../img/gradient.png')
+    background-position: center center
+    background-repeat: no-repeat
+    opacity: .4
+    background-size: 110% 110%
