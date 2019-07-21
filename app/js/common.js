@@ -233,6 +233,10 @@ $(document).ready(function(){
     function heightses() {
 
 
+        if ($(window).width()>=992) {
+            $('.product-item-subs').height('auto').matchHeight({ byRow: true});
+        }
+
         if ($(window).width()>=768) {
             $('.ben-item-title').height('auto').equalHeights();
             $('.vac-item-title').height('auto').matchHeight({ byRow: true});
