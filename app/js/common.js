@@ -151,7 +151,7 @@ $(document).ready(function(){
         margin: 30,
         dots: false,
         autoHeight: false,
-        navText: ["<img class='svg' src='../img/icons/arr-btn.svg'>","<img class='svg' src='../img/icons/arr-btn.svg'>"],
+        navText: ["<img class='svg' src='/img/icons/arr-btn.svg'>","<img class='svg' src='../img/icons/arr-btn.svg'>"],
         responsive: {
             0: {
                 items: 1,
@@ -170,7 +170,7 @@ $(document).ready(function(){
         margin: 30,
         dots: false,
         autoHeight: false,
-        navText: ["<img class='svg' src='../img/icons/arr-btn.svg'>","<img class='svg' src='../img/icons/arr-btn.svg'>"],
+        navText: ["<img class='svg' src='/img/icons/arr-btn.svg'>","<img class='svg' src='../img/icons/arr-btn.svg'>"],
         responsive: {
             0: {
                 items: 1,
@@ -185,6 +185,7 @@ $(document).ready(function(){
         }
     });
 
+
     $('.add-slider').owlCarousel({
         loop:false,
         nav: true,
@@ -192,7 +193,7 @@ $(document).ready(function(){
         margin: 30,
         dots: false,
         autoHeight: true,
-        navText: ["<img class='svg' src='../img/icons/arr-btn.svg'>","<img class='svg' src='../img/icons/arr-btn.svg'>"],
+        navText: ["<img class='svg' src='/img/icons/arr-btn.svg'>","<img class='svg' src='../img/icons/arr-btn.svg'>"],
         responsive: {
             0: {
                 items: 1,
