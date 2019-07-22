@@ -132,6 +132,15 @@ h3
     background-color: $accent
     border-color: $accent
 
+.btn-bb
+  color: $text
+  background-color: #fff
+  border-color: $text
+  &:hover
+    color: #fff
+    background-color: $accent
+    border-color: $accent
+
 section
   padding-top: 90px
 
@@ -335,6 +344,48 @@ section
   90%, 100%
     transform: perspective(140px) rotateY(180deg)
     opacity: 0
+
+
+//pagination
+.pagination
+  font-size: 18px
+  line-height: 1
+  .page-prev, .page-next
+    +mt(.3s)
+    width: 24px
+    height: 24px
+    border: 1px solid #dd3d42
+    background-color: #fff
+    border-radius: 3px
+    text-align: center
+    padding: 0
+    cursor: pointer
+    position: relative
+    top: -2px
+    .svg
+      width: 5px
+      height: auto
+      fill: $accent
+      +mt(.3s)
+    &:hover
+      background-color: $accent
+      .svg
+        fill: #fff
+  .page-prev
+    transform: rotate(180deg)
+    margin-right: 12px
+  .page-next
+    margin-left: 12px
+  span, a
+    display: inline-block
+    margin: 0 7px
+    color: $accent
+    &:hover
+      color: $accent
+  a
+    font-weight: 700
+
+
 
 
 

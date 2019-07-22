@@ -1,0 +1,43 @@
+.add-slider-count
+  .count-container
+    text-align: center
+    color: $accent
+    margin-bottom: 40px
+    .cur
+      font-weight: 700
+      font-size: 18px
+
+.add-slide
+  &-img
+    height: 200px
+    border: 1px solid #e8e8e8
+    border-radius: 5px
+    +bg-cover
+    margin-bottom: 10px
+  &-title
+    position: relative
+    color: $text
+    font-size: 16px
+    font-weight: 700
+    padding-left: 18px
+    line-height: 1
+    text-decoration: underline
+    +mt(.3s)
+    left: 0
+    display: inline-block
+    margin-bottom: 8px
+    &:hover
+      left: 5px
+      color: $accent
+      text-decoration: underline
+    &:before
+      content: ''
+      position: absolute
+      width: 7px
+      height: 12px
+      background-image: url('../img/icons/arr-btn-accent.svg')
+      +bg-cover
+      left: 0
+      top: 0
+  &-desc
+    padding-left: 18px

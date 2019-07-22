@@ -62,6 +62,8 @@ $(document).ready(function(){
         var $totalSlides = $slides.length;
         var $info = $this.find('.cur');
 
+        console.log($totalSlides);
+
         if($totalSlides < 10) {
             $this.find('.total').text('0'+$totalSlides);
         } else {
@@ -168,6 +170,28 @@ $(document).ready(function(){
         margin: 30,
         dots: false,
         autoHeight: false,
+        navText: ["<img class='svg' src='../img/icons/arr-btn.svg'>","<img class='svg' src='../img/icons/arr-btn.svg'>"],
+        responsive: {
+            0: {
+                items: 1,
+                autoHeight: true,
+            },
+            480: {
+                items: 2,
+            },
+            992: {
+                items: 4,
+            }
+        }
+    });
+
+    $('.add-slider').owlCarousel({
+        loop:false,
+        nav: true,
+        items: 4,
+        margin: 30,
+        dots: false,
+        autoHeight: true,
         navText: ["<img class='svg' src='../img/icons/arr-btn.svg'>","<img class='svg' src='../img/icons/arr-btn.svg'>"],
         responsive: {
             0: {
