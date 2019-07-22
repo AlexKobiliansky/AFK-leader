@@ -259,6 +259,34 @@ $(document).ready(function(){
 
 
 
+    var swiper = new Swiper('.others-slider', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        direction: 'vertical',
+        navigation: {
+            nextEl: '.others-btn-next',
+            prevEl: '.others-btn-prev',
+        },
+        speed: 500,
+        autoplay: {
+            delay: 5000,
+        },
+        // breakpoints: {
+        //     480: {
+        //         autoHeight: true,
+        //         slidesPerView: 1,
+        //     },
+        //     768: {
+        //         slidesPerView: 1,
+        //     },
+        //     992: {
+        //         slidesPerView: 2,
+        //     }
+        // }
+    });
+
+
+
 
 
 
