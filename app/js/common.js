@@ -46,14 +46,6 @@ $(document).ready(function(){
 
     $('.filter-select').styler();
 
-
-
-
-
-
-
-
-
     /*slider counters functionality*/
     $('.slider-count').each(function () {
         var $this = $(this);
@@ -93,17 +85,13 @@ $(document).ready(function(){
         } else
 
             //eight-items-slider
-            if ($slider.hasClass('eight-items')) {
+            if ($slider.hasClass('double-items')) {
                 $slider.on('changed.owl.carousel', function (e) {
                     if ($(window).width() < 480) {
                         var currentItem = e.item.index + 1;
-                    } else if (($(window).width() >= 480) && ($(window).width() < 992)) {
-                        var currentItem = e.item.index + 2;
                     } else
-
-
                     {
-                        var currentItem = e.item.index + 4;
+                        var currentItem = e.item.index + 2;
                     }
 
 
@@ -115,7 +103,7 @@ $(document).ready(function(){
                 });
 
                 $slider.on('initialize.owl.carousel', function (e) {
-                    var currentItem = e.item.index + 4;
+                    var currentItem = e.item.index + 2;
                     $info.text('0'+currentItem);
                 });
         } else
@@ -133,13 +121,6 @@ $(document).ready(function(){
         }
     });
     /*end slider counters functionality*/
-
-
-
-
-
-
-
 
 
 
@@ -166,7 +147,7 @@ $(document).ready(function(){
     $('.objects-slider-large').owlCarousel({
         loop:false,
         nav: true,
-        items: 4,
+        items: 2,
         margin: 30,
         dots: false,
         autoHeight: false,
@@ -180,7 +161,7 @@ $(document).ready(function(){
                 items: 2,
             },
             992: {
-                items: 4,
+                items: 2,
             }
         }
     });
@@ -272,29 +253,9 @@ $(document).ready(function(){
         autoplay: {
             delay: 5000,
         },
-        // breakpoints: {
-        //     480: {
-        //         autoHeight: true,
-        //         slidesPerView: 1,
-        //     },
-        //     768: {
-        //         slidesPerView: 1,
-        //     },
-        //     992: {
-        //         slidesPerView: 2,
-        //     }
-        // }
     });
-
-
-
-
-
-
-
-
-
     //*** END SLIDERS ***//
+
 
     $('.about-tabs').tabs();
 
@@ -321,8 +282,6 @@ $(document).ready(function(){
         if ($(window).width()<480) {
 
         }
-
-
     }
 
     $(window).resize(function() {
@@ -365,29 +324,7 @@ $(document).ready(function(){
 
 
     $('.preloader').fadeOut();
-
-    //E-mail Ajax Send
-    $("form").submit(function() { //Change
-        var th = $(this);
-
-        $.ajax({
-            type: "POST",
-            url: "mail.php", //Change
-            data: th.serialize()
-        }).done(function() {
-
-        });
-        return false;
-    });
-
-
-
-
-
-
-
-
-
+    
 
     /**
      * YA-MAPS
@@ -398,14 +335,6 @@ $(document).ready(function(){
     var check_if_load_objectsmap = false;
     var check_if_load_contactsmap = false;
     var check_if_load = false;
-    //Необходимые переменные для того, чтобы задать координаты на Яндекс.Карте
-    //var myMapTemp, myPlacemarkTemp;
-
-
-
-
-
-
 
 
     function init_objectsmap () {
@@ -469,11 +398,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
     //Функция создания карты сайта и затем вставки ее в блок с идентификатором &#34;map-yandex&#34;
     function init_contactsmap () {
         var mapId = $('#contactsmap'),
@@ -503,15 +427,6 @@ $(document).ready(function(){
         map.geoObjects.add(myPlacemark);
         map.behaviors.disable('scrollZoom');
 
-
-        //Если нужно сместить центр карты на странице:
-        //var position = map.getGlobalPixelCenter();
-        //map.setGlobalPixelCenter([ position[0] - 350, position[1] ]);
-
-        //if ($(window).width() <= 1500) {
-        //map.setGlobalPixelCenter([ position[0] - 250, position[1]]);
-        //}
-
         // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
         var layer = map.layers.get(0).get(0);
 
@@ -521,11 +436,6 @@ $(document).ready(function(){
             spinner.removeClass('is-active');
         });
     }
-
-
-
-
-
 
 
 
@@ -557,15 +467,6 @@ $(document).ready(function(){
 
         map.geoObjects.add(myPlacemark);
         map.behaviors.disable('scrollZoom');
-
-
-        //Если нужно сместить центр карты на странице:
-        //var position = map.getGlobalPixelCenter();
-        //map.setGlobalPixelCenter([ position[0] - 350, position[1] ]);
-
-        //if ($(window).width() <= 1500) {
-        //map.setGlobalPixelCenter([ position[0] - 250, position[1]]);
-        //}
 
         // Получаем первый экземпляр коллекции слоев, потом первый слой коллекции
         var layer = map.layers.get(0).get(0);
@@ -701,6 +602,4 @@ $(document).ready(function(){
     ymap();
     objectsmap();
     contactsmap();
-
-
 });
